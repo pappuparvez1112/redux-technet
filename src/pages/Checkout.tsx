@@ -11,11 +11,12 @@ import { useState } from 'react';
 
 export default function Checkout() {
   const [scheduled, setScheduled] = useState<boolean>(false);
-  const { products,total } = useAppSelector((state) => state.cart);
+  const { products, total } = useAppSelector((state) => state.cart);
   //! Dummy Data
 
   //! **
-
+  const tax = (total * 7) / 100;
+  const grandTotal = total + tax;
   return (
     <div className="flex justify-center items-center h-[calc(100vh-80px)] gap-10 text-primary">
       <div className="max-w-3xl w-full">
@@ -123,11 +124,11 @@ export default function Checkout() {
             </div>
             <div className="flex justify-between text-lg">
               <p>Delivery</p>
-              <p>4.5$</p>
+              <p>${tax.toFixed(2)}</p>
             </div>
             <div className="flex justify-between text-xl font-bold">
               <p>Total:</p>
-              <p>$</p>
+              <p>${grandTotal.toFixed(2)}</p>
             </div>
             <Button className="w-full">Checkout</Button>
           </div>
