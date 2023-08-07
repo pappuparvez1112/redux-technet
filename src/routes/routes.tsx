@@ -24,7 +24,11 @@ const routes = createBrowserRouter([
       },
       {
         path: '/product-details/:id',
-        element: <ProductDetails />,
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/checkout',
