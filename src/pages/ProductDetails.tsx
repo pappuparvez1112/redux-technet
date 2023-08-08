@@ -20,9 +20,9 @@ export default function ProductDetails() {
 
   return (
     <>
-      <div className="flex max-w-7xl mx-auto items-center border-b border-gray-300">
+      <div className="flex max-w-7xl mx-auto items-center  m-5">
         <div className="w-[50%]">
-          <img src={product?.image} alt="" />
+          <img className="w-[50%]" src={product?.image} alt="" />
         </div>
         <div className="w-[50%] space-y-3">
           <h1 className="text-3xl font-semibold">{product?.name}</h1>
@@ -32,7 +32,11 @@ export default function ProductDetails() {
               <li key={feature}>{feature}</li>
             ))}
           </ul>
-          <Button>Add to cart</Button>
+          <div className="flex">
+            <Button className="me-5 p-5">Edit</Button>
+            <br />
+            <Button>Delete</Button>
+          </div>
         </div>
       </div>
       <ProductReview id={id!} />

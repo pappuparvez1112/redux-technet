@@ -53,7 +53,8 @@
     "react-router-dom": "^6.11.2",
     "redux-logger": "^3.0.6",
     "tailwind-merge": "^1.13.0",
-    "tailwindcss-animate": "^1.0.5"
+    "tailwindcss-animate": "^1.0.5",
+    "tailwindcss-classnames": "^3.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

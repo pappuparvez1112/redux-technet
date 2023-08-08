@@ -50,28 +50,38 @@ export default function ProductReview({ id }: IProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto mt-5">
+    <div className="max-w-6xl mx-auto mt-10">
       <form className="flex gap-5 items-center" onSubmit={handleSubmit}>
         <Textarea
-          className="min-h-[30px]"
+          className="min-h-[10px]"
           onChange={handleChange}
           value={inputValue}
         />
         <Button
           type="submit"
-          className="rounded-full h-10 w-10 p-2 text-[25px]"
+          className="rounded-full h-12 w-12 p-2 text-[35px]"
         >
           <FiSend />
         </Button>
       </form>
       <div className="mt-10">
         {data?.comments?.map((comment: string, index: number) => (
-          <div key={index} className="flex gap-3 items-center mb-5">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <p>{comment}</p>
+          <div
+            key={index}
+            className="flex items-center justify-between border-b border-gray-50"
+          >
+            <div className="flex items-center pb-5">
+              <Avatar className="me-10">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <p>{comment}</p>
+            </div>
+            <div className="flex">
+              <Button className="me-5 p-5">Edit</Button>
+              <br />
+              <Button>Delete</Button>
+            </div>
           </div>
         ))}
       </div>
